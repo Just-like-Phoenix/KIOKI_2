@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KIOKI_2.MainPage"
+             BackgroundColor="{StaticResource Gray900}"
+             >
+    <FlexLayout 
+        Direction="Column"
+        AlignItems="Center"
+        JustifyContent="Center">
+        <!-- key field -->
+        <Entry
+            x:Name="key"
+            Placeholder="Ключ"
+            PlaceholderColor="{StaticResource White}"
+            BackgroundColor="{StaticResource Gray950}"
+            MaxLength="10"
+            FontSize="Medium"
+            Margin="5"
+            MinimumHeightRequest="50"
+            MaximumHeightRequest="50"
+            MinimumWidthRequest="500"
+            MaximumWidthRequest="500"/>
+
+        <!-- text field -->
+        <Frame 
+            BorderColor="Transparent"
+            BackgroundColor="Transparent"
+            Padding="0"
+            Margin="5"
+            >
+            <StackLayout>
+                <Button
+                    Text="Выбрать файл"
+                    Clicked="Button_FileChoose_Clicked"
+                    TextColor="{StaticResource White}"
+                    BackgroundColor="{StaticResource Gray950}"
+                    BorderColor="Transparent"
+                    HeightRequest="40"
+                    WidthRequest="500"/>
+                <Editor
+                    x:Name="text"
+                    Placeholder="Введите текст"
+                    PlaceholderColor="{StaticResource White}"
+                    BackgroundColor="{StaticResource Gray950}"
+                    AutoSize="TextChanges"
+                    MinimumHeightRequest="50"
+                    MaximumHeightRequest="250"
+                    MinimumWidthRequest="500"
+                    MaximumWidthRequest="500"/>
+            </StackLayout>
+        </Frame>
+
+        <!-- radio -->
+        <StackLayout Margin="5">
+            <RadioButton Content="Шифровать" IsChecked="True" x:Name="encrypt"/>
+            <RadioButton Content="Дешифровать" IsChecked="False" x:Name="decrypt"/>
+        </StackLayout>
+
+        <!-- action button -->
+        <Button
+            Text="Обработать"
+            Clicked="Button_Action_Clicked"
+            TextColor="{StaticResource White}"
+            BackgroundColor="{StaticResource Gray950}"
+            BorderColor="Transparent"
+            Margin="5"
+            HeightRequest="50"
+            WidthRequest="150"/>
+
+    </FlexLayout>
+</ContentPage>
